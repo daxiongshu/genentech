@@ -18,6 +18,7 @@ csv.field_size_limit(sys.maxsize)
 
 # A, paths
 #train=['/home/carl/kaggle/cancer/nlp1/1gram/diagnosis_head/train_doc.csv','/home/carl/kaggle/cancer/nlp1/2grams/surgical_head/train_doc.csv','/home/carl/kaggle/cancer/nlp1/1gram/procedure_head/train_doc.csv','/home/carl/kaggle/cancer/nlp2/1gram3000/diagnosis_head/train_doc.csv','/home/carl/kaggle/cancer/nlp2/1gram3000/procedure_head/train_doc.csv','/home/carl/kaggle/cancer/nlp2/1gram6000/diagnosis_head/train_doc.csv','../encode/diagnosis_encode.csv']
+# trainx.csv is the patients_train.csv that excludes patients
 train=['/home/carl/kaggle/cancer/input/trainx.csv','../encode/encode3/dp_encode.csv']
 test=train
 trainsvm=['../nlp1/diagnosis/nlp1-diagnosis-rebuild1-train.svm']
