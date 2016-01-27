@@ -208,7 +208,7 @@ def data(path,pathsvm, D,cc=None):
         readers={}
         for c,name in enumerate(path[1:]):
             readers[c]=DictReader(open(name))
-    if False and len(pathsvm)>0:
+    if len(pathsvm)>0:
         readersvm={}
         for c,name in enumerate(pathsvm):
             readersvm[c]=(open(name))
@@ -222,8 +222,8 @@ def data(path,pathsvm, D,cc=None):
             ID,x,y='','',''
             for c,name in enumerate(path[1:]):
                 readers[c].next()
-            #for  c,name in enumerate(pathsvm):
-            #    readersvm[c].readline()
+            for  c,name in enumerate(pathsvm):
+                readersvm[c].readline()
         else:
             try:
                 ID=row['patient_id']
@@ -248,8 +248,8 @@ def data(path,pathsvm, D,cc=None):
             if len(path)>0:
                 for c,reader in readers.items():
                     tmp=tmp+' '+reader.next()['doc']
-                #for c,reader in readersvm.items():
-                #    tmp=tmp+' '+reader.readline()[2:-1]
+                for c,reader in readersvm.items():
+                    tmp=tmp+' '+reader.readline()[2:-1]
             for d,key in enumerate(tmp.split()):
                 index = abs(hash(key )) % D
                 x.append(index)
